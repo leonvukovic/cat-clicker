@@ -74,12 +74,16 @@ var octopus = {
   },
 
   updateCurrentCat: function() {
+    this.catNewName = document.getElementById('add-name').value;
+    this.catNewImg = document.getElementById('add-img').value;
+    this.catNewClicks = document.getElementById('add-clicks').value;
+
     model.currentCat.name = this.catNewName;
     model.currentCat.imgSrc = this.catNewImg;
     model.currentCat.clickCount = this.catNewClicks;
 
     catView.render();
-    catListView.render();
+    catViewList.render();
   }
 };
 
@@ -161,9 +165,6 @@ var adminView = {
     this.adminBtn = document.getElementById('admin-btn');
     this.cancelBtn = document.getElementById('cancel-btn');
     this.saveBtn = document.getElementById('save-btn');
-    this.catNewName = document.getElementById('add-name').value;
-    this.catNewImg = document.getElementById('add-img').value;
-    this.catNewClicks = document.getElementById('add-clicks').value;
 
     // add event listeners to DOM elements
     this.adminBtn.addEventListener('click', function() {
